@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEO · AI搜索品牌可见性</title>
+  <meta name="description" content="AI搜索品牌可见性">
+  <!--
+    Publicize 托管页 · slug=geo · registry: state=draft, tier=L3, landing.mode=none（本页=首个收口）
+    字段仅来自 registry（one_liner 照抄 项目索引.md 判断列），**无事实卡**。
+    🔴待人补清单：① audience ② 一句话主张 ③ 问题陈述 ④ 三个核心能力 ⑤ 真实数据
+      ⑥ 真实场景 ⑦ 禁说项 ⑧ 局限 —— 一律不编造，证据齐后按 13 栏卡补全再回填本页。
+    索引备注：落地页=无(geo-platform被占)——geo-platform.com 是他人的法语出租车站，不可引用；
+      索引动作=补卡。
+  -->
+  <style>
+    :root { --ink:#1a1f2b; --muted:#5c6577; --line:#e4e7ee; --bg:#f7f8fa; --card:#fff; --accent:#2f5cff; --accent-ink:#fff; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:720px; margin:0 auto; padding:34px 20px 72px; }
+    .brand { font-size:13px; color:var(--muted); letter-spacing:.04em; }
+    h1 { font-size:32px; line-height:1.25; margin:10px 0 6px; }
+    .kicker { font-size:18px; font-weight:600; color:var(--accent); margin:0 0 6px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-top:18px; }
+    .card h2 { font-size:14px; margin:0 0 10px; color:var(--muted); letter-spacing:.06em; }
+    .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn { display:inline-block; padding:11px 20px; border-radius:9px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; font-family:inherit; }
+    .btn-primary { background:var(--accent); color:var(--accent-ink); }
+    form label { display:block; font-size:13px; color:var(--muted); margin:12px 0 4px; }
+    form input[type="email"], form input[type="text"], form select { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; color:var(--ink); }
+    form input:focus, form select:focus { outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+    .hp { position:absolute !important; left:-9999px !important; top:-9999px !important; width:1px; height:1px; opacity:0; }
+    .src { font-size:12px; color:var(--muted); margin:10px 0 0; }
+    .src[hidden] { display:none; }
+    footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px dashed var(--line); padding-top:14px; }
+    @media (max-width:520px) { h1 { font-size:26px; } }
+  </style>
+</head>
+<body data-slug="geo">
+  <div class="wrap">
+    <p class="brand">Publicize 托管页 · /p/geo/</p>
+
+    <h1>GEO</h1>
+    <p class="kicker">AI搜索品牌可见性</p>
+    <!-- 🔴待补：audience（registry.audience=null，索引无此列，待人补后回填本行） -->
+
+    <!-- 🔴待补：一句话主张 / 解决什么问题 / 三个核心能力 / 真实数据 / 真实场景 / 已知的局限
+         —— 无事实卡，证据不足，整块不渲染（缺字段占位，禁止编造） -->
+
+    <div class="card">
+      <h2>加入候补名单</h2>
+      <!-- ✅ 已配置 2026-10-04：Formspree endpoint https://formspree.io/f/xqpekkav（表单 publicize-hosted-pages）；
+           _gotcha 蜜罐为 Formspree 官方识别字段。⚠️ Formspree 注册邮箱需点确认链接后才开始收件。 -->
+      <form action="https://formspree.io/f/xqpekkav" method="POST" id="waitlist-form" novalidate>
+        <input type="hidden" name="_subject" id="f_subject" value="GEO AI搜索可见性 waitlist">
+        <input type="hidden" name="slug" id="f_slug" value="geo">
+        <input type="hidden" name="utm_source" id="f_utm_source" value="">
+        <input type="hidden" name="utm_medium" id="f_utm_medium" value="">
+        <input type="hidden" name="utm_campaign" id="f_utm_campaign" value="">
+        <input type="hidden" name="referrer" id="f_referrer" value="">
+        <input type="hidden" name="ts_loaded" id="f_ts" value="0">
+        <input type="text" name="_gotcha" id="f_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <label for="f_email">邮箱 *</label>
+        <input type="email" id="f_email" name="email" required placeholder="you@example.com">
+
+        <label for="name">怎么称呼（可选）</label>
+        <input type="text" id="name" name="name" autocomplete="name">
+
+        <label for="source_select">你从哪知道我们？</label>
+        <select id="source_select" name="source_select">
+          <option value="">请选择</option>
+          <option value="zhihu">知乎</option>
+          <option value="jike">即刻</option>
+          <option value="v2ex">V2EX</option>
+          <option value="friend">朋友告诉我</option>
+          <option value="search">搜索到的</option>
+          <option value="other">其他</option>
+        </select>
+
+        <div class="btnrow">
+          <button type="submit" class="btn btn-primary">加入候补名单</button>
+        </div>
+        <p class="src" id="utm-display" hidden>来源：<span id="utm-tags"></span></p>
+      </form>
+    </div>
+
+    <footer>
+      由 Publicize 托管页生成 · 字段取自 registry 与事实卡，未提供的内容一律留空不编造。
+      本项目事实卡尚未建立（state=draft），页面内容待卡完备后回填。
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var q = new URLSearchParams(window.location.search);
+      var tags = [];
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        var v = q.get(k) || '';
+        var hidden = document.getElementById('f_' + k);
+        if (hidden) hidden.value = v;
+        if (v) tags.push(k.replace('utm_', '') + '=' + v);
+      });
+      document.getElementById('f_slug').value = document.body.getAttribute('data-slug') || '';
+      document.getElementById('f_referrer').value = document.referrer || '';
+      document.getElementById('f_ts').value = Math.floor(Date.now() / 1000);
+      if (tags.length) {
+        document.getElementById('utm-tags').textContent = tags.join(' · ');
+        document.getElementById('utm-display').hidden = false;
+      }
+      document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+        if (document.getElementById('f_hp').value) { e.preventDefault(); return; }
+        if (!document.getElementById('f_email').value) { e.preventDefault(); }
+      });
+    })();
+  </script>
+</body>
+</html>

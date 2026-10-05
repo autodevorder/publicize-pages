@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicize 项目页 · 我们在做的 5 个项目</title>
+  <meta name="description" content="Publicize 项目总入口：5 个在做的项目，点卡片进各自的页面。">
+  <!--
+    Publicize 根路径总入口页（导航页 · 2026-10-05）
+    字段来源：docs/registry-v2.json（name + one_liner），链接 = 相对路径 p/<slug>/，
+    GitHub Pages 带子路径前缀时同样可用（故【禁止】写 href="/..." 根绝对路径）。
+    铁律：纯导航，无表单、无 UTM 脚本；registry 里没有的信息不编。
+    样式复用 template.html 同一套 CSS 变量，视觉一致。
+  -->
+  <style>
+    :root {
+      --ink: #1a1f2b; --muted: #5c6577; --line: #e4e7ee; --bg: #f7f8fa;
+      --card: #fff; --accent: #2f5cff; --accent-ink: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 34px 20px 72px; }
+    .brand { font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+    h1 { font-size: 32px; line-height: 1.25; margin: 10px 0 6px; }
+    .kicker { font-size: 17px; color: var(--muted); margin: 0 0 4px; }
+    .hint { font-size: 14px; color: var(--muted); margin: 0; }
+    a.proj {
+      display: block; background: var(--card); border: 1px solid var(--line);
+      border-radius: 12px; padding: 18px 22px; margin-top: 16px;
+      text-decoration: none; color: inherit; transition: border-color .15s, box-shadow .15s;
+    }
+    a.proj:hover, a.proj:focus { border-color: var(--accent); box-shadow: 0 2px 10px rgba(47,92,255,.10); }
+    .pname { font-size: 19px; font-weight: 700; color: var(--ink); }
+    .pgo { font-size: 14px; font-weight: 600; color: var(--accent); float: right; }
+    .pliner { font-size: 15px; color: var(--muted); margin-top: 4px; }
+    footer { margin-top: 34px; font-size: 12px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 14px; }
+    @media (max-width: 520px) { h1 { font-size: 26px; } .pgo { float: none; display: block; margin-top: 6px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="brand">Publicize 托管页 · 总入口</p>
+
+    <h1>Publicize 项目页</h1>
+    <p class="kicker">我们正在做的 5 个项目，点一张卡片进去看。</p>
+    <p class="hint">每个项目页末尾都能留邮箱，留了我们会通知你进展。</p>
+
+    <a class="proj" href="p/validation-os/">
+      <span class="pgo">进去看 →</span>
+      <div class="pname">ValidationOS</div>
+      <div class="pliner">想法验证OS·7天真钱</div>
+    </a>
+
+    <a class="proj" href="p/d-hrs/">
+      <span class="pgo">进去看 →</span>
+      <div class="pname">D-HRS（链聘通）</div>
+      <div class="pliner">链聘通HR合规存证</div>
+    </a>
+
+    <a class="proj" href="p/competition/">
+      <span class="pgo">进去看 →</span>
+      <div class="pname">Competition 截止日提醒</div>
+      <div class="pliner">赛事截止日自动提醒</div>
+    </a>
+
+    <a class="proj" href="p/quantitative/">
+      <span class="pgo">进去看 →</span>
+      <div class="pname">Quantitative</div>
+      <div class="pliner">A股量化五星智投</div>
+    </a>
+
+    <a class="proj" href="p/geo/">
+      <span class="pgo">进去看 →</span>
+      <div class="pname">GEO</div>
+      <div class="pliner">AI搜索品牌可见性</div>
+    </a>
+
+    <footer>
+      由 Publicize 托管页生成 · 名称与一句话取自 registry，未提供的内容一律留空不编造。
+    </footer>
+  </div>
+</body>
+</html>
