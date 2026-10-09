@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伴面 · AI面试教练 | 陪你过每一面</title>
+  <meta name="description" content="伴面·AI面试教练">
+  <!--
+    Publicize 托管页 · slug=banmian · registry: landing.mode=hosted（2026-10-07 方案 B：Publicize 侧托管收口）
+    来源：docs/事实卡-伴面.md（2026-10-06）+ docs/registry-v2.json（slug=trae-ai-creativity-challenge）
+    禁说项（事实卡红线，页面与内容均不得出现）：已服务 X 个用户 / X 次面试 / 面试通过率提升 X% /
+      平均提分 X / 融资 / 媒体报道 / 大赛获奖 / 摄像头视频不保存 / 完全不上传 / 引用 /pricing 原文 /
+      编造定价金额、团队、成立时间 / 把 camera_analysis_impl.md 说成已上线功能。
+    🔴待人补：① 定价金额 ② 真实数据 ③ 亲历故事 ④ 摄像头/语音数据保留策略。
+    归因（2026-10-07 降级后口径）：托管页 UTM（页内脚本注入 hidden 字段 → Formspree）+ 来源下拉 source_select，双通道在 Formspree 后台汇总。
+    伴面 ref 链路已查证不通、卡点 2 降级为「不用做」：① referral_codes 存的是用户个人邀请码、referrals 的 inviter/invitee 均为 NOT NULL 外键，表结构塞不进 zhihu 这类渠道字符串；
+      ② 线上注册页 9 个 JS 无 utm_/captureRef/referral 采集；③ 写采集的 commit 434a0f0 已于 2026-09-30 被 git reset 丢弃。
+  -->
+  <style>
+    :root { --ink:#1a1f2b; --muted:#5c6577; --line:#e4e7ee; --bg:#f7f8fa; --card:#fff; --accent:#2f5cff; --accent-ink:#fff; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:720px; margin:0 auto; padding:34px 20px 72px; }
+    .brand { font-size:13px; color:var(--muted); letter-spacing:.04em; }
+    .brand a { color:var(--muted); }
+    h1 { font-size:32px; line-height:1.25; margin:10px 0 6px; }
+    .kicker { font-size:18px; font-weight:600; color:var(--accent); margin:0 0 6px; }
+    .aud { color:var(--muted); font-size:14px; margin:0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-top:18px; }
+    .card h2 { font-size:14px; margin:0 0 10px; color:var(--muted); letter-spacing:.06em; }
+    ul.caps { margin:0; padding-left:20px; }
+    ul.caps li { margin:7px 0; }
+    .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn { display:inline-block; padding:11px 20px; border-radius:9px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; font-family:inherit; }
+    .btn-primary { background:var(--accent); color:var(--accent-ink); }
+    .btn-ghost { background:#fff; color:var(--accent); border-color:var(--accent); }
+    form label { display:block; font-size:13px; color:var(--muted); margin:12px 0 4px; }
+    form input[type="email"], form input[type="text"], form select { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; color:var(--ink); }
+    form input:focus, form select:focus { outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+    .hp { position:absolute !important; left:-9999px !important; top:-9999px !important; width:1px; height:1px; opacity:0; }
+    .src { font-size:12px; color:var(--muted); margin:10px 0 0; }
+    .src[hidden] { display:none; }
+    footer { margin-top:30px; font-size:12px; color:var(--muted); border-top:1px dashed var(--line); padding-top:14px; }
+    @media (max-width:520px) { h1 { font-size:26px; } }
+  </style>
+</head>
+<body data-slug="banmian">
+  <div class="wrap">
+    <p class="brand">Publicize 托管页 · /p/banmian/</p>
+
+    <h1>伴面</h1>
+    <p class="kicker">伴面·AI面试教练</p>
+    <p class="aud">为「应届生 / 跳槽者 / 海归求职者（面试零反馈练习需求）」而做</p>
+
+    <div class="card">
+      <h2>一句话</h2>
+      <p style="margin:0">陪你过每一面（站点 slogan 原文）。</p>
+    </div>
+
+    <div class="card">
+      <h2>解决什么问题</h2>
+      <p style="margin:0">求职者"练习面试没有反馈"的问题：面完不知道自己哪句答砸了、表情紧不紧张、语速快不快，只能反复上场试错。</p>
+    </div>
+
+    <div class="card">
+      <h2>三个核心能力</h2>
+      <ul class="caps">
+        <li><strong>简历解析</strong>：上传 PDF/图片，AI 自动解析技能、经历、教育背景，作为面试输入生成针对性问题</li>
+        <li><strong>AI 模拟面试</strong>：AI 扮演面试官，基于简历提问，非通用题库</li>
+        <li><strong>多模态反馈 + 综合报告</strong>：摄像头实时捕捉表情/眼神/语速，面试中显示表现数据；结束后生成内容/自信度/表达/互动四维评分与改进建议</li>
+      </ul>
+    </div>
+
+    <!-- 🔴待人补：proof/story 不渲染 —— 事实卡【真实数据】【真实场景】为 null，铁律不编造 -->
+
+    <div class="card">
+      <h2>已知的局限 / 不适合谁</h2>
+      <p style="margin:0">摄像头分析依赖设备：需要 USB 摄像头和麦克风；没有摄像头也能用（AI 提问和评分照常），但表情、眼神、语速的实时反馈会缺失。只想刷题库的用户，用题库类产品更直接。</p>
+    </div>
+
+    <!-- 收口：邮箱表单（方案 B：Formspree → 周五人工抄数） -->
+    <div class="card">
+      <h2>预约免费体验</h2>
+      <!-- ✅ 已配置：Formspree endpoint https://formspree.io/f/xqpekkav（表单 publicize-hosted-pages）；
+           method 必须为 POST；_gotcha 蜜罐为 Formspree 官方识别字段，机器人填了静默丢弃。
+           ⚠️ 提醒：Formspree 注册邮箱需点击确认链接后才开始收件，未确认前首次提交会失败。 -->
+      <form action="https://formspree.io/f/xqpekkav" method="POST" id="waitlist-form" novalidate>
+        <input type="hidden" name="_subject" id="f_subject" value="伴面 预约免费体验">
+        <input type="hidden" name="slug" id="f_slug" value="banmian">
+        <input type="hidden" name="utm_source" id="f_utm_source" value="">
+        <input type="hidden" name="utm_medium" id="f_utm_medium" value="">
+        <input type="hidden" name="utm_campaign" id="f_utm_campaign" value="">
+        <input type="hidden" name="referrer" id="f_referrer" value="">
+        <input type="hidden" name="ts_loaded" id="f_ts" value="0">
+        <!-- honeypot（字段名 _gotcha = Formspree 官方识别名）：机器人填了就静默丢弃（后端配置后生效） -->
+        <input type="text" name="_gotcha" id="f_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <label for="f_email">邮箱 *</label>
+        <input type="email" id="f_email" name="email" required placeholder="you@example.com">
+
+        <label for="name">怎么称呼（可选）</label>
+        <input type="text" id="name" name="name" autocomplete="name">
+
+        <label for="source_select">你从哪知道我们？ *</label>
+        <select id="source_select" name="source_select" required>
+          <option value="">请选择</option>
+          <option value="zhihu">知乎</option>
+          <option value="jike">即刻</option>
+          <option value="v2ex">V2EX</option>
+          <option value="friend">朋友推荐</option>
+          <option value="search">搜索引擎</option>
+          <option value="other">其他</option>
+        </select>
+
+        <div class="btnrow">
+          <button type="submit" class="btn btn-primary">预约免费体验</button>
+          <!-- ✅ 已查证（2026-10-07 AI 三条证据）：伴面不支持渠道 ref 归因 —— ① referral_codes 表存的是用户个人邀请码（43GMW/VVZAS/47R4Z 挂在具体用户名下），referrals 表 inviter/invitee 均为 NOT NULL 外键，表结构塞不进 zhihu 这类渠道字符串；
+               ② 线上注册页 9 个 JS 无 utm_/captureRef/referral 采集；③ 写采集的 commit 434a0f0 已于 2026-09-30 被 git reset 丢弃。
+               降级方案：REF_ENABLED 保持空数组 []（勿改），「开始体验」跳伴面首页；伴面归因只走托管页 UTM → Formspree + 来源下拉。 -->
+          <a class="btn btn-ghost" id="btn-try" href="https://interview.123tips.cn/" target="_blank" rel="noopener">开始体验</a>
+        </div>
+        <p class="src" style="margin:6px 0 0">开始体验将跳转伴面官网首页（伴面不支持渠道 ref，已查证 2026-10-07）。</p>
+        <p class="src" id="utm-display" hidden>来源：<span id="utm-tags"></span></p>
+      </form>
+    </div>
+
+    <footer>
+      © 2026 伴面 · 粤ICP备2026111502号-1（站点页脚原文）。本页由 Publicize 托管生成，字段取自 registry 与事实卡，未提供的内容一律留空不编造。
+      你的邮箱仅用于产品动态通知；隐私政策见伴面官网 <a href="https://interview.123tips.cn/privacy" target="_blank" rel="noopener">/privacy</a>。
+      提交数据将按 utm_source / utm_campaign 归因。
+    </footer>
+  </div>
+
+  <script>
+    // 页内 UTM 读取：从 URL query 捕获 utm_* → 显示 + 注入 hidden 字段（分发链接带上即可归因）
+    (function () {
+      var q = new URLSearchParams(window.location.search);
+      var tags = [];
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        var v = q.get(k) || '';
+        var hidden = document.getElementById('f_' + k);
+        if (hidden) hidden.value = v;
+        if (v) tags.push(k.replace('utm_', '') + '=' + v);
+      });
+      document.getElementById('f_slug').value = document.body.getAttribute('data-slug') || '';
+      document.getElementById('f_referrer').value = document.referrer || '';
+      document.getElementById('f_ts').value = Math.floor(Date.now() / 1000);
+      if (tags.length) {
+        document.getElementById('utm-tags').textContent = tags.join(' · ');
+        document.getElementById('utm-display').hidden = false;
+      }
+      // ✅ 已查证伴面不支持 ref（2026-10-07）：本数组保持空数组 []，勿改、勿填。
+      // 填了会跳到伴面不识别的 ?ref= 参数，白跳。伴面归因只走上方 UTM hidden 字段 + 来源下拉。
+      var REF_ENABLED = [];
+      var REF_BASE = 'https://interview.123tips.cn/';
+      var tryBtn = document.getElementById('btn-try');
+      if (tryBtn) {
+        var src = q.get('utm_source') || '';
+        if (REF_ENABLED.indexOf(src) !== -1) {
+          tryBtn.setAttribute('href', REF_BASE + 'register?ref=' + encodeURIComponent(src));
+        } else {
+          tryBtn.setAttribute('href', REF_BASE);
+        }
+      }
+      // 提交前的基础防刷（服务端配置后应再校验：honeypot 非空即丢弃、ts_loaded <3s 拒）
+      document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+        if (document.getElementById('f_hp').value) { e.preventDefault(); return; }
+        if (!document.getElementById('f_email').value) { e.preventDefault(); }
+        var sel = document.getElementById('source_select');
+        if (sel && !sel.value) { e.preventDefault(); }
+      });
+    })();
+  </script>
+</body>
+</html>
